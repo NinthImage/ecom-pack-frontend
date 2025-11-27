@@ -33,8 +33,7 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files unless found in search params
-    '/((?!_next|[^?]*\.(?:html?|css|js(?!on)|jpe?g|png|gif|svg|ttf|woff2?|ico|cur|heic|webp|weba|mp4|webm|waac|aac|oga|ogg|spx|opus)($|\?))*)',
-    // Always run for API routes
-    '/(api|trpc)(.*)',
+    '/((?!_next'/api/:path*'
+        '/(api|trpc)(.*)',
   ],
 };
