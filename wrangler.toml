@@ -1,41 +1,8 @@
 name = "ecom-pack-frontend"
-type = "javascript"
-main = ".next/standalone/server.js"
-compatibility_date = "2025-01-01"
+main = ".open-next/worker.js"
+compatibility_date = "2025-03-25"
+compatibility_flags = ["nodejs_compat"]
 
-# Environment variables for Next.js
-[env.production]
-name = "ecom-pack-frontend-prod"
-routes = [
-  { pattern = "example.com", zone_name = "example.com" }
-]
-
-[env.staging]
-name = "ecom-pack-frontend-staging"
-routes = [
-  { pattern = "staging.example.com", zone_name = "example.com" }
-]
-
-# Triggers for scheduled builds
-[triggers]
-crons = ["0 0 * * *"]
-
-# Observability
-[observability]
-enabled = true
-
-# Build configuration
-[build]
-command = "npm run build"
-cwd = "./"
-root = "."
-
-# Development
-[dev]
-ip = "0.0.0.0"
-port = 3000
-local_protocol = "http"
-
-# Performance and limits
-[limits]
-cpu_seconds = 30
+[assets]
+binding = "ASSETS"
+directory = ".open-next/assets"
