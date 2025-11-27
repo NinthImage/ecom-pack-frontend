@@ -22,10 +22,6 @@ export async function middleware(req: NextRequest) {
     response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   }
   
-  // Apply Clerk authentication to protected routes
-  if (isProtectedRoute(req)) {
-    return clerkMiddleware()(req);
-  }
   
   return response;
 }
